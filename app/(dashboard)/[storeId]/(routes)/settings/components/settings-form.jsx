@@ -14,6 +14,7 @@ import {
 import { Heading } from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { Trash } from "lucide-react";
@@ -30,6 +31,7 @@ const formSchema = z.object({
 export const SettingsForm = ({ initialData }) => {
     const params = useParams();
     const router = useRouter();
+    const origin = useOrigin();
 
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
